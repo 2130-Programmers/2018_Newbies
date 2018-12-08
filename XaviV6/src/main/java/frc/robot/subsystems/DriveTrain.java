@@ -7,7 +7,13 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import frc.robot.RobotMap;
+import frc.robot.commands.arcadeDrive;
 
 /**
  * Add your docs here.
@@ -39,15 +45,15 @@ public class DriveTrain extends Subsystem {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand()
 
-    setDefaultCommand(new DriveArcade());
+    setDefaultCommand(new arcadeDrive());
    
    
   }
    
-public void DriveArcade(double moveSpeed, double rotateSpeed){
-  differentialDrive.DriveArcade(moveSpeed,rotateSpeed);
-}
-
-
+  public void DriveArcade(double moveSpeed, double rotateSpeed){
+    differentialDrive.arcadeDrive(moveSpeed,rotateSpeed);
   }
+
+
 }
+
